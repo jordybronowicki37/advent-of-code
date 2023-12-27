@@ -3,9 +3,7 @@ file = open("input", "r")
 
 instructions = ""
 nodes = []
-current_nodes = []
-steps = 0
-
+start_nodes = []
 
 class Node:
     def __init__(self, values):
@@ -20,10 +18,9 @@ def find_node(v):
             return n
 
 
-def check_all_nodes_on_finish():
-    for _cn in current_nodes:
-        if _cn.n[2] != "Z":
-            return False
+def check_node_finished(node):
+    if node.n[2] != "Z":
+        return False
     return True
 
 
@@ -38,32 +35,34 @@ for line in file:
         line = line.replace("(", "").replace(")", "").replace(",", "").replace("=", "").replace("  ", " ").split(" ")
         nn = Node(line)
         if line[0][2] == "A":
-            current_nodes.append(nn)
+            start_nodes.append(nn)
         nodes.append(nn)
 
 for nc in nodes:
     nc.l = find_node(nc.l)
     nc.r = find_node(nc.r)
 
-while True:
-    finished = False
-    for i in instructions:
-        if steps % 1_000_000 == 0:
-            print(steps // 1_000_000)
+answer = len(instructions)
+for cni, cn in enumerate(start_nodes):
+    steps = 0
+    while True:
+        finished = False
         steps += 1
-        for cni, cn in enumerate(current_nodes):
+        for i in instructions:
             next_node = ""
             if i == "R":
                 next_node = cn.r
             else:
                 next_node = cn.l
 
-            current_nodes[cni] = next_node
-        if check_all_nodes_on_finish():
-            finished = True
+            cn = next_node
+            if check_node_finished(next_node):
+                finished = True
+                break
+
+        if finished:
             break
 
-    if finished:
-        break
+    answer *= steps
 
-print(steps)
+print(answer)
