@@ -11,6 +11,8 @@ on:
         required: true
       AOC_SESSION:
         required: true
+      LEADERBOARD_ID:
+        required: true
 
 jobs:
   update-specific-year:
@@ -22,6 +24,7 @@ jobs:
       - uses: k2bd/advent-readme-stars@v1
         with:
           userId: ${{ secrets.USER_ID }}
+          leaderboardId: ${{ secrets.LEADERBOARD_ID }}
           sessionCookie: ${{ secrets.AOC_SESSION }}
           tableMarker: <!--- advent_readme_stars_table_${{ inputs.year }} --->
           year: ${{ inputs.year }}

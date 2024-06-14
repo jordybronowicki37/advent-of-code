@@ -15,4 +15,5 @@ jobs:
       year: 2020
     secrets:
       USER_ID: ${{ secrets.USER_ID }}
+      LEADERBOARD_ID: ${{ secrets.LEADERBOARD_ID }}
       AOC_SESSION: ${{ secrets.AOC_SESSION }}
