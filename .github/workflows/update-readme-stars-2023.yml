@@ -1,0 +1,19 @@
+name: Update AoC Stars 2023
+
+on:
+  push:
+    paths:
+      - 2023/**
+  workflow_dispatch:
+
+jobs:
+  update-readme-year-2023:
+    uses: ./.github/workflows/update-readme-stars-per-year.yml
+    permissions:
+      contents: write
+    with:
+      year: 2023
+    secrets:
+      USER_ID: ${{ secrets.USER_ID }}
+      LEADERBOARD_ID: ${{ secrets.LEADERBOARD_ID }}
+      AOC_SESSION: ${{ secrets.AOC_SESSION }}
