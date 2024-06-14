@@ -9,6 +9,8 @@ on:
 jobs:
   update-readme-year-2020:
     uses: ./.github/workflows/update-readme-stars-per-year.yml
+    permissions:
+      contents: write
     with:
       year: 2020
     secrets:
