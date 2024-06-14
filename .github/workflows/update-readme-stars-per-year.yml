@@ -1,0 +1,30 @@
+name: Insert AoC Stars table
+
+on:
+  workflow_call:
+    inputs:
+      year:
+        required: true
+        type: string
+    secrets:
+      USER_ID:
+        required: true
+      AOC_SESSION:
+        required: true
+
+jobs:
+  update-specific-year:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: k2bd/advent-readme-stars@v1
+        with:
+          userId: ${{ secrets.USER_ID }}
+          sessionCookie: ${{ secrets.AOC_SESSION }}
+          tableMarker: <!--- advent_readme_stars_table_${{ inputs.year }} --->
+          year: ${{ inputs.year }}
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update README stars of year ${{ inputs.year }}

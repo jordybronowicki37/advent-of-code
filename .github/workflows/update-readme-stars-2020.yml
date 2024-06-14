@@ -1,0 +1,16 @@
+name: Update AoC Stars 2020
+
+on:
+  push:
+    paths:
+      - 2020/**
+  workflow_dispatch:
+
+jobs:
+  update-readme-year-2020:
+    uses: ./.github/workflows/update-readme-stars-per-year.yml
+    with:
+      year: 2020
+    secrets:
+      USER_ID: ${{ secrets.USER_ID }}
+      AOC_SESSION: ${{ secrets.AOC_SESSION }}
