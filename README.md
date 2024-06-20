@@ -67,3 +67,5 @@
 | [Day 6](https://adventofcode.com/2020/day/6) | ⭐ | ⭐ |
 | [Day 7](https://adventofcode.com/2020/day/7) | ⭐ |   |
 <!--- advent_readme_stars_table_2020 --->
+
+<!--- advent_readme_stars_table_2019 --->
