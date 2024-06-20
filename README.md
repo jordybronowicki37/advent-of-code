@@ -69,3 +69,10 @@
 <!--- advent_readme_stars_table_2020 --->
 
 <!--- advent_readme_stars_table_2019 --->
+## 2019 Results
+
+| Day | Part 1 | Part 2 |
+| :---: | :---: | :---: |
+| [Day 1](https://adventofcode.com/2019/day/1) | ⭐ | ⭐ |
+| [Day 2](https://adventofcode.com/2019/day/2) | ⭐ | ⭐ |
+<!--- advent_readme_stars_table_2019 --->
