@@ -1,4 +1,4 @@
-file = open("1input", "r")
+file = open("input", "r")
 passport = {}
 valid = 0
 

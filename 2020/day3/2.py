@@ -1,5 +1,5 @@
 def slopingForest(right, down):
-    file = open("2inputdyllan.txt", "r")
+    file = open("input.txt", "r")
     trees = 0
     line_num = 0
 

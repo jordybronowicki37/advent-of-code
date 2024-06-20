@@ -1,4 +1,4 @@
-file = open("1input", "r")
+file = open("input", "r")
 first = True
 trees = 0
 lines = 0

@@ -1,4 +1,4 @@
-file = open("2input", "r")
+file = open("input", "r")
 depth = 0
 forward = 0
 aim = 0

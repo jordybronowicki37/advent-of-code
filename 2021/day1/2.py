@@ -1,4 +1,4 @@
-file = open("2input", "r")
+file = open("input", "r")
 previousValue = 0
 increases = 0
 slider = []

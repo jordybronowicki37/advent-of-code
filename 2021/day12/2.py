@@ -1,5 +1,4 @@
 file = open("input", "r")
-# file = open("input_test", "r")
 caves = []
 
 
