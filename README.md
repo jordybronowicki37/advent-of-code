@@ -1,4 +1,9 @@
 # Advent of Code
+All of the challenges in this repository are written inside of Python. I am still working on expanding the individual year progress.
+
+> [!IMPORTANT]  
+> The code for the challenges is only designed of achieving the required goal and is not representable of my usual coding style. The quality and performance of the code can vary.
+
 <!--- advent_readme_stars_table_2024 --->
 
 <!--- advent_readme_stars_table_2023 --->
