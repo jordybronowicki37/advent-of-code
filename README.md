@@ -5,6 +5,12 @@ All of the challenges in this repository are written inside of Python. I am stil
 > The code for the challenges is only designed of achieving the required goal and is not representable of my usual coding style. The quality and performance of the code can vary.
 
 <!--- advent_readme_stars_table_2024 --->
+## 2024 Results
+
+| Day | Part 1 | Part 2 |
+| :---: | :---: | :---: |
+| [Day 1](https://adventofcode.com/2024/day/1) | ⭐ | ⭐ |
+<!--- advent_readme_stars_table_2024 --->
 
 <!--- advent_readme_stars_table_2023 --->
 ## 2023 Results
