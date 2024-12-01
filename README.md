@@ -86,4 +86,6 @@ All of the challenges in this repository are written inside of Python. I am stil
 | :---: | :---: | :---: |
 | [Day 1](https://adventofcode.com/2019/day/1) | ⭐ | ⭐ |
 | [Day 2](https://adventofcode.com/2019/day/2) | ⭐ | ⭐ |
+| [Day 3](https://adventofcode.com/2019/day/3) | ⭐ | ⭐ |
+| [Day 4](https://adventofcode.com/2019/day/4) | ⭐ | ⭐ |
 <!--- advent_readme_stars_table_2019 --->
