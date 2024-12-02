@@ -10,6 +10,7 @@ All of the challenges in this repository are written inside of Python. I am stil
 | Day | Part 1 | Part 2 |
 | :---: | :---: | :---: |
 | [Day 1](https://adventofcode.com/2024/day/1) | ⭐ | ⭐ |
+| [Day 2](https://adventofcode.com/2024/day/2) | ⭐ | ⭐ |
 <!--- advent_readme_stars_table_2024 --->
 
 <!--- advent_readme_stars_table_2023 --->
