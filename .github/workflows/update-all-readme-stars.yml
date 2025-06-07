@@ -26,17 +26,11 @@ jobs:
           tableMarker: <!--- advent_readme_stars_table_${{ matrix.year }} --->
           year: ${{ matrix.year }}
 
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Updated README stars year ${{ matrix.year }}
-
       - name: Pull rebase and commit
         run: |
           # Setup
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin master
           
           # Stage the file
           git add README.md
@@ -46,5 +40,6 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m $'Update stars for year ${{ matrix.year }}\n\nCo-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>'
+            git pull --rebase origin master
             git push origin HEAD:master
           fi
