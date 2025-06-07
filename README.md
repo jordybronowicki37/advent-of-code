@@ -20,7 +20,7 @@ All of the challenges in this repository are written inside of Python. I am stil
 <!--- advent_readme_stars_table_2024 --->
 
 <!--- advent_readme_stars_table_2023 --->
-## 2023
+## 2023 Results
 
 | Day | Part 1 | Part 2 |
 | :---: | :---: | :---: |
