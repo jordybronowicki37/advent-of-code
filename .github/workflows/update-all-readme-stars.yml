@@ -9,70 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    strategy:
+      max-parallel: 1
+      matrix:
+        year: [2024, 2023, 2022, 2021, 2020, 2019]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      - name: Check for 2019 stars
+      - name: Check for ${{ matrix.year }} stars
         uses: k2bd/advent-readme-stars@v1
-        env:
-          year: 2019
         with:
           userId: ${{ secrets.USER_ID }}
           leaderboardId: ${{ secrets.LEADERBOARD_ID }}
           sessionCookie: ${{ secrets.AOC_SESSION }}
-          tableMarker: <!--- advent_readme_stars_table_${{ env.year }} --->
-          year: ${{ env.year }}
-      - name: Check for 2020 stars
-        uses: k2bd/advent-readme-stars@v1
-        env:
-          year: 2020
-        with:
-          userId: ${{ secrets.USER_ID }}
-          leaderboardId: ${{ secrets.LEADERBOARD_ID }}
-          sessionCookie: ${{ secrets.AOC_SESSION }}
-          tableMarker: <!--- advent_readme_stars_table_${{ env.year }} --->
-          year: ${{ env.year }}
-      - name: Check for 2021 stars
-        uses: k2bd/advent-readme-stars@v1
-        env:
-          year: 2021
-        with:
-          userId: ${{ secrets.USER_ID }}
-          leaderboardId: ${{ secrets.LEADERBOARD_ID }}
-          sessionCookie: ${{ secrets.AOC_SESSION }}
-          tableMarker: <!--- advent_readme_stars_table_${{ env.year }} --->
-          year: ${{ env.year }}
-      - name: Check for 2022 stars
-        uses: k2bd/advent-readme-stars@v1
-        env:
-          year: 2022
-        with:
-          userId: ${{ secrets.USER_ID }}
-          leaderboardId: ${{ secrets.LEADERBOARD_ID }}
-          sessionCookie: ${{ secrets.AOC_SESSION }}
-          tableMarker: <!--- advent_readme_stars_table_${{ env.year }} --->
-          year: ${{ env.year }}
-      - name: Check for 2023 stars
-        uses: k2bd/advent-readme-stars@v1
-        env:
-          year: 2023
-        with:
-          userId: ${{ secrets.USER_ID }}
-          leaderboardId: ${{ secrets.LEADERBOARD_ID }}
-          sessionCookie: ${{ secrets.AOC_SESSION }}
-          tableMarker: <!--- advent_readme_stars_table_${{ env.year }} --->
-          year: ${{ env.year }}
-      - name: Check for 2024 stars
-        uses: k2bd/advent-readme-stars@v1
-        env:
-          year: 2024
-        with:
-          userId: ${{ secrets.USER_ID }}
-          leaderboardId: ${{ secrets.LEADERBOARD_ID }}
-          sessionCookie: ${{ secrets.AOC_SESSION }}
-          tableMarker: <!--- advent_readme_stars_table_${{ env.year }} --->
-          year: ${{ env.year }}
+          tableMarker: <!--- advent_readme_stars_table_${{ matrix.year }} --->
+          year: ${{ matrix.year }}
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Updated README stars
+          commit_message: Updated README stars year ${{ matrix.year }}
