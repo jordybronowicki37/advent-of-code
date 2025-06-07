@@ -33,9 +33,18 @@ jobs:
 
       - name: Pull rebase and commit
         run: |
+          # Setup
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin master
+          
+          # Stage the file
           git add README.md
-          git commit -m $'Update stars for year ${{ matrix.year }}\n\nCo-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>'
-          git push origin HEAD:master
+          
+          # Check if anything is staged
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m $'Update stars for year ${{ matrix.year }}\n\nCo-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>'
+            git push origin HEAD:master
+          fi
