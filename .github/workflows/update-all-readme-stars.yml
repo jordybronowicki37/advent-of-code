@@ -16,7 +16,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      - name: Check for ${{ matrix.year }} stars
+
+      - name: Update README stars - year ${{ matrix.year }}
         uses: k2bd/advent-readme-stars@v1
         with:
           userId: ${{ secrets.USER_ID }}
@@ -24,7 +25,17 @@ jobs:
           sessionCookie: ${{ secrets.AOC_SESSION }}
           tableMarker: <!--- advent_readme_stars_table_${{ matrix.year }} --->
           year: ${{ matrix.year }}
+
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Updated README stars year ${{ matrix.year }}
+
+      - name: Pull rebase and commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
+          git add README.md
+          git commit -m $'Update stars for year ${{ matrix.year }}\n\nCo-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>'
+          git push origin HEAD:main
